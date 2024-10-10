@@ -1,0 +1,37 @@
+package main
+
+import "fmt"
+
+func main() {
+	var beratParsel int
+	fmt.Print("Berat parsel (gram): ")
+	fmt.Scanln(&beratParsel)
+
+	// Menghitung berat dalam kg dan sisanya
+	kg := beratParsel / 1000
+	sisa := beratParsel % 1000
+
+	// Menghitung biaya dasar
+	biayaDasar := kg * 10000
+
+	// Menghitung biaya tambahan
+	var biayaTambahan int
+	if sisa >= 500 {
+		biayaTambahan = sisa * 5
+	} else {
+		biayaTambahan = sisa * 15
+	}
+
+	// Menghitung total biaya
+	var totalBiaya int
+	if beratParsel > 10000 {
+		totalBiaya = biayaDasar + biayaTambahan
+	} else {
+		totalBiaya = biayaDasar
+	}
+
+	// Menampilkan hasil
+	fmt.Println("Detail berat:", kg, "kg +", sisa, "gr")
+	fmt.Println("Detail biaya: Rp.", biayaDasar, "+ Rp.", biayaTambahan)
+	fmt.Println("Total biaya: Rp.", totalBiaya)
+}
