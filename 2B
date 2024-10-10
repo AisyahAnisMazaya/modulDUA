@@ -1,0 +1,25 @@
+package main
+
+import "fmt"
+
+func main() {
+    var pita string
+    var bungaCount int
+
+    fmt.Println("Masukkan nama bunga (ketik SELESAI untuk berhenti):")
+
+    for {
+        var bunga string
+        fmt.Scanln(&bunga)
+
+        if bunga == "SELESAI" {
+            break
+        }
+
+        pita += bunga + " "
+        bungaCount++
+    }
+
+    fmt.Println("Isi Pita:", pita)
+    fmt.Println("Jumlah Bunga:", bungaCount)
+}

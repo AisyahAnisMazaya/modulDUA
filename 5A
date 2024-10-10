@@ -1,0 +1,32 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var numbers [5]int
+	var chars [3]byte
+
+	// Read the integers from the first line
+	fmt.Println("Enter 5 integers (separated by spaces):")
+	fmt.Scanln(&numbers[0], &numbers[1], &numbers[2], &numbers[3], &numbers[4])
+
+	// Read the characters from the second line
+	fmt.Println("Enter 3 characters:")
+	fmt.Scanln(&chars[0], &chars[1], &chars[2])
+
+	// Print the ASCII representations of the integers
+	fmt.Print("ASCII representations: ")
+	for _, num := range numbers {
+		fmt.Printf("%c", num)
+	}
+	fmt.Println()
+
+	// Print the characters
+	fmt.Print("Characters: ")
+	for _, char := range chars {
+		fmt.Printf("%c", char)
+	}
+	fmt.Println()
+}
